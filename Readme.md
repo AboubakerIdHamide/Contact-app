@@ -1,7 +1,8 @@
-# My First PHP CRUD Application for Library Management
+# Contact-APP
 A Small Larvel Crud Application Where I'm Trying Breeze Auth && Crud Functionality
 
 ## Screenshots
 
 ![Screenshot 1](./resources/images/Screenshot.png)
+![Screenshot 1](./resources/images/Screenshot 2.png)
 
