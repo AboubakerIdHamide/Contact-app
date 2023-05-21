@@ -24,7 +24,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container container-fluid">
-          <a class="navbar-brand text-uppercase text-danger" href="#">Contact APP</a>
+          <a class="navbar-brand text-uppercase text-danger" href="/">Contact APP</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -39,7 +39,7 @@
           <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Companies</a>
+                    <a class="nav-link active" aria-current="page" href="{{route('companies.index')}}">Companies</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="{{route('contacts.index')}}">Contacts</a>
@@ -70,9 +70,26 @@
           </div>
         </div>
       </nav>
-    <div class="container mt-5">
+    {{-- Message --}}
+    <div class="container p-4">
+        @if(session()->has("msg"))
+            <div class="alert alert-{{session()->get("status")}} w-50 m-auto text-center">
+                {{session()->get("msg")}}
+            </div>
+        @endif
+    </div>
+
+    <div class="container">
         @yield("content")
     </div>
+
+    {{-- Destroy Alert --}}
+    <script>
+        setTimeout(() => {
+            document?.querySelector(".alert")?.remove()
+        }, 5000);
+    </script>
+
     <!-- MDB -->
     <script
     type="text/javascript"

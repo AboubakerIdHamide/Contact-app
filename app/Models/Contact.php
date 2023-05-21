@@ -9,5 +9,10 @@ class Contact extends Model
 {
     use HasFactory;
 
-    protected $fillable=["name", "email", "phone", "company"];
+    protected $fillable=["first_name", "last_name", "email", "phone", "adress","company_id"];
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class, "company_id", "id");
+    }
 }
