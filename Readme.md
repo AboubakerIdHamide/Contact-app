@@ -4,5 +4,5 @@ A Small Larvel Crud Application Where I'm Trying Breeze Auth && Crud Functionali
 ## Screenshots
 
 ![Screenshot 1](./resources/images/Screenshot.png)
-![Screenshot 2](./resources/images/Screenshot2.png)
+![Screenshot 2](./resources/images/Screenshot 2.png)
 
