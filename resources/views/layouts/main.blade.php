@@ -46,8 +46,8 @@
                 </li>
             </ul>
             <ul class="navbar-nav d-flex align-items-center gap-2 mr-4">
-                <a href="#" class="btn btn-outline-secondary">Login</a>
-                <a href="#" class="btn btn-outline-primary">Register</a>
+                <a href="/login" class="btn btn-outline-secondary">Login</a>
+                <a href="/register" class="btn btn-outline-primary">Register</a>
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a
@@ -62,7 +62,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li>
-                            <a class="dropdown-item" href="#">Logout</a>
+                            <a class="dropdown-item" href="/logout">Logout</a>
                         </li>
                     </ul>
                 </li>

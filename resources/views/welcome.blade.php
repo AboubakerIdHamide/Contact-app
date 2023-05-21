@@ -4,8 +4,8 @@
         <h1>Contact App</h1>
         <p>Contact App gives you everything you need to organize your contacts easily.</p>
         <div>
-            <a href="/signup" class="btn btn-primary">Sign up</a>
-            <a href="/signin" class="btn btn-outline-secondary">Sign in</a>
+            <a href="/register" class="btn btn-primary">Sign up</a>
+            <a href="/login" class="btn btn-outline-secondary">Sign in</a>
         </div>
     </div>
     @include("layouts._footer")
