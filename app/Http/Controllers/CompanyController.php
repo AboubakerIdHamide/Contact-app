@@ -98,4 +98,28 @@ class CompanyController extends Controller
         Company::destroy($id);
         return redirect("/companies")->with(["msg"=>"Company Deleted Successfuly", "status"=>"info"]);
     }
+
+    public function getDeletedCompanies(Request $request)
+    {
+        if($request->has("search")){
+            $data=Company::onlyTrashed()->where("name","LIKE", "%".$request->search."%")->paginate(3);
+        }else{
+            $data=Company::onlyTrashed()->latest()->paginate(3);
+        }
+        return view("companies.trash", ["companies"=>$data]);
+    }
+
+    public function forceDeleteCompany($id)
+    {
+        $company = Company::withTrashed()->find($id);
+        $company->forceDelete();
+        return redirect("/companies")->with(["msg"=>"Company Deleted Forever Successfuly", "status"=>"info"]);
+    }
+
+    public function restoreCompany($id)
+    {
+        $company = Company::withTrashed()->find($id);
+        $company->restore();
+        return redirect("/companies")->with(["msg"=>"Company Restored Successfuly", "status"=>"info"]);
+    }
 }

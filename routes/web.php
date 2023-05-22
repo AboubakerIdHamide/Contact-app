@@ -46,3 +46,19 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+// Some Tests
+Route::get('/test', [ContactsController::class, "eloquentTests"]);
+
+// Trash
+Route::group(["prefix"=>"trash", "auth"=>"middleware"], function(){
+    // Contacts
+    Route::get('/contacts', [ContactsController::class, "getDeletedContacts"]);
+    Route::delete('/contacts/{id}', [ContactsController::class, "forceDeleteContact"])->name("contacts.forceDelete");
+    Route::put('/contacts/{id}', [ContactsController::class, "restoreContact"])->name("contacts.restore");
+
+    // Companies
+    Route::get('/companies', [CompanyController::class, "getDeletedCompanies"]);
+    Route::delete('/companies/{id}', [CompanyController::class, "forceDeleteCompany"])->name("companies.forceDelete");
+    Route::put('/companies/{id}', [CompanyController::class, "restoreCompany"])->name("companies.restore");
+});

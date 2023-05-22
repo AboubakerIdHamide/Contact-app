@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string("adress");
             $table->unsignedBigInteger("company_id");
             $table->foreign("company_id")->references("id")->on("companies")->onDelete("cascade")->onUpdate("cascade");
+            $table->softDeletes();
             $table->timestamps();
         });
     }

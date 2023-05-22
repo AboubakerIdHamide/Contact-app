@@ -58,11 +58,14 @@
                     data-mdb-toggle="dropdown"
                     aria-expanded="false"
                     >
-                    UserName
+                    Back Up <i class="fa fa-trash"></i>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li>
-                            <a class="dropdown-item" href="/logout">Logout</a>
+                            <a class="dropdown-item" href="/trash/contacts">Contacts</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/trash/companies">Companies</a>
                         </li>
                     </ul>
                 </li>
