@@ -51,7 +51,7 @@ require __DIR__.'/auth.php';
 Route::get('/test', [ContactsController::class, "eloquentTests"]);
 
 // Trash
-Route::group(["prefix"=>"trash", "auth"=>"middleware"], function(){
+Route::group(["prefix"=>"trash", "middleware"=>"auth"], function(){
     // Contacts
     Route::get('/contacts', [ContactsController::class, "getDeletedContacts"]);
     Route::delete('/contacts/{id}', [ContactsController::class, "forceDeleteContact"])->name("contacts.forceDelete");
